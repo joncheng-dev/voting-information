@@ -10,13 +10,14 @@ function decideWhichDivToShow() {
   }
 }
 
+function submit(event) {
+  event.preventDefault();
+  decideWhichDivToShow();
+}
+
 function setFormSubmissionEventHandler() {
   let userForm = document.querySelector("form");
-
-  userForm.addEventListener("submit", function (event) {
-    event.preventDefault();
-    decideWhichDivToShow();
-  });
+  userForm.addEventListener("submit", submit);
 }
 
 window.onload = function () {
